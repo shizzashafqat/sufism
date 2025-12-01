@@ -151,4 +151,24 @@ body {
     background-color: var(--ink-dark);
     color: var(--parchment);
     transform: translateY(-2px);
+    /* SAFETY FIX: Prevents images from exploding off the screen */
+img, video, iframe {
+    max-width: 100%;  /* Never wider than the parent box */
+    height: auto;     /* Maintain aspect ratio */
+    display: block;   /* Removes weird bottom spacing */
+    margin: 0 auto;   /* Centers it */
+}
+
+/* Update the Content Center to be wider so the image has room */
+.content-center {
+    max-width: 90%;   /* Was 700px, now it allows 90% of the border width */
+    width: 1200px;    /* Optional cap for very large screens */
+    margin: 0 auto;
+}
+
+/* Ensure the border container handles content correctly */
+.mughal-border-container {
+    overflow: hidden; /* Hides anything that tries to stick out */
+    box-sizing: border-box; /* Includes padding in width calculations */
+}
 }
