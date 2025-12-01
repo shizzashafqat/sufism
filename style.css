@@ -1,52 +1,60 @@
 /* --- VINTAGE SCROLL THEME (Intro Page) --- */
 
 :root {
-    /* New Light Palette */
+    /* Palette */
     --parchment: #F9F4E6;     /* Light Beige Background */
-    --ink-dark: #2C1A12;      /* Dark Brown Text (Like old ink) */
+    --ink-dark: #2C1A12;      /* Dark Brown Text */
     --gold-accent: #C5A059;   /* Muted Gold */
-    --faded-red: #8A3324;     /* For buttons/accents */
+    --faded-red: #8A3324;     /* Accents */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'IM Fell English', serif;
 }
 
 .vintage-theme {
     background-color: var(--parchment);
     color: var(--ink-dark);
-    position: relative;
-    /* Optional: Add a subtle paper texture url here if you have one */
-    /* background-image: url('assets/paper-texture.jpg'); */ 
+    min-height: 100vh; /* Ensures full screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 1. The Mughal Border Logic */
 .mughal-border-container {
     width: 90%;
-    height: 90vh; /* Takes up most of the screen */
+    min-height: 90vh; 
     border: 20px solid transparent;
     
-    /* This creates the border using an image. 
-       You can find a "Mughal Border PNG" on Google and save it to assets/border.png.
-       If you don't have one yet, this creates a double-line placeholder: */
-    border: 5px double var(--gold-accent); 
-    outline: 2px solid var(--ink-dark); /* Creates a complex border look */
+    /* Double Border Effect */
+    border: 6px double var(--gold-accent); 
+    outline: 2px solid var(--ink-dark); 
     
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    box-shadow: inset 0 0 50px rgba(197, 160, 89, 0.1); /* Inner glow */
+    box-shadow: inset 0 0 80px rgba(197, 160, 89, 0.15); /* Soft inner glow */
+    background: white; /* Optional: Makes the center pop slightly against the parchment */
 }
 
 /* 2. Typography */
 .scroll-title {
-    font-family: 'Cinzel Decorative', cursive; /* Make sure this font is linked in HTML head */
+    font-family: 'Cinzel Decorative', cursive; 
     font-size: 3.5rem;
     color: var(--ink-dark);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .scroll-subtitle {
     font-family: 'IM Fell English', serif;
     font-style: italic;
+    font-size: 1.5rem;
     color: var(--faded-red);
     margin-top: 0;
     margin-bottom: 30px;
@@ -54,23 +62,28 @@
 
 /* 3. Image Styling */
 .image-frame {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid var(--gold-accent);
     background: white;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-    max-width: 600px;
+    box-shadow: 8px 8px 20px rgba(44, 26, 18, 0.15);
+    max-width: 500px;
     margin: 0 auto 30px auto;
-    transform: rotate(-1deg); /* Slight tilt makes it look placed by hand */
+    transform: rotate(-1deg); 
 }
 
 .hero-image {
     width: 100%;
     height: auto;
     display: block;
-    filter: sepia(30%) contrast(110%); /* Adds a vintage photo filter */
+    filter: sepia(40%) contrast(105%) brightness(95%); /* Vintage photo filter */
 }
 
 /* 4. Text & Signature */
+.content-center {
+    text-align: center;
+    max-width: 700px;
+}
+
 .text-block-light {
     max-width: 600px;
     margin: 0 auto;
@@ -79,19 +92,20 @@
 
 .research-statement {
     font-family: 'IM Fell English', serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     border-top: 1px solid var(--gold-accent);
     border-bottom: 1px solid var(--gold-accent);
     padding: 20px 0;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .author-name {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--ink-dark);
-    font-weight: bold;
+    font-weight: 700;
+    margin: 0;
 }
 
 .author-label {
@@ -107,14 +121,17 @@
     background-color: transparent;
     color: var(--ink-dark);
     border: 2px solid var(--ink-dark);
-    padding: 10px 30px;
+    padding: 12px 35px;
     font-family: 'Cinzel Decorative', cursive;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 20px;
+    margin-top: 25px;
+    text-transform: uppercase;
 }
 
 .seal-button-light:hover {
     background-color: var(--ink-dark);
     color: var(--parchment);
+    transform: translateY(-2px);
 }
