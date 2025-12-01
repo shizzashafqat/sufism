@@ -77,6 +77,23 @@ body {
     display: block;
     filter: sepia(40%) contrast(105%) brightness(95%); /* Vintage photo filter */
 }
+/* Video Styling */
+.video-frame {
+    padding: 8px;
+    /* Matches your existing gold border theme */
+    border: 4px double var(--gold-accent); 
+    background: white;
+    box-shadow: 8px 8px 20px rgba(44, 26, 18, 0.2); /* Soft shadow */
+    max-width: 600px; /* Prevents it from being too huge */
+    margin: 0 auto 30px auto;
+}
+
+.video-frame video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px; /* Slight softening of corners */
+}
 
 /* 4. Text & Signature */
 .content-center {
